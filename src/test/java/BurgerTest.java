@@ -70,7 +70,6 @@ public class BurgerTest {
         float burgerPrice = burger.getPrice();
         float expectedPrice = buns.get(0).getPrice() * 2 + ingredients.get(0).getPrice();
         assertEquals("Стоимость бургера расчитана неверно", expectedPrice, burgerPrice, 0);
-
     }
 
     @Test
