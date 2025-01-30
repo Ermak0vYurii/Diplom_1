@@ -5,7 +5,10 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 import praktikum.Bun;
 import praktikum.Burger;
+import praktikum.Database;
 import praktikum.Ingredient;
+
+import java.util.List;
 
 import static Constants.Constants.*;
 import static org.junit.Assert.assertEquals;
@@ -50,13 +53,24 @@ public class BurgerTest {
 
     @Test
     public void getPriceBurgerTest() {
-        burger.setBuns(bunMock);
-        burger.addIngredient(ingredientMock);
-        Mockito.when(bunMock.getPrice()).thenReturn(PRICE_BUN);
-        Mockito.when(ingredientMock.getPrice()).thenReturn(PRICE_INGREDIENT);
+//        burger.setBuns(bunMock);
+//        burger.addIngredient(ingredientMock);
+//        Mockito.when(bunMock.getPrice()).thenReturn(PRICE_BUN);
+//        Mockito.when(ingredientMock.getPrice()).thenReturn(PRICE_INGREDIENT);
+//        float burgerPrice = burger.getPrice();
+//        float expectedPrice = PRICE_BUN * 2 + PRICE_INGREDIENT;
+//        assertEquals("Стоимость бургера расчитана неверно", expectedPrice, burgerPrice, 0);
+
+        //для покрытия более 70%
+        Database db = new Database();
+        List<Bun> buns = db.availableBuns();
+        List<Ingredient> ingredients = db.availableIngredients();
+        burger.setBuns(buns.get(0));
+        burger.addIngredient(ingredients.get(0));
         float burgerPrice = burger.getPrice();
-        float expectedPrice = PRICE_BUN * 2 + PRICE_INGREDIENT;
+        float expectedPrice = buns.get(0).getPrice() * 2 + ingredients.get(0).getPrice();
         assertEquals("Стоимость бургера расчитана неверно", expectedPrice, burgerPrice, 0);
+
     }
 
     @Test
