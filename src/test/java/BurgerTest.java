@@ -87,8 +87,6 @@ public class BurgerTest {
                 "= " + FILLING.toString().toLowerCase() + " " + NAME_INGREDIENT + " =\r\n" +
                 "(==== " + NAME_BUN + " ====)\r\n" +
                 "\r\nPrice: " + priceBurger + "\r\n";
-        System.out.println("Ожидаемый результат: \n" + expectedReceipt);
-        System.out.println("Фактический результат: \n" + actualReceipt);
         assertEquals("Рецепт бургера не верный", expectedReceipt, actualReceipt);
     }
 }
