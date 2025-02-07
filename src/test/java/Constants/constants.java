@@ -1,6 +1,6 @@
 package Constants;
 
-public class Constants {
+public class constants {
     public static final String NAME_BUN = "name bun";
     public static final float PRICE_BUN = 120F;
     public static final String NAME_INGREDIENT = "ingredient";
