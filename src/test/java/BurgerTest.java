@@ -7,7 +7,7 @@ import praktikum.Bun;
 import praktikum.Burger;
 import praktikum.Ingredient;
 
-import static Constants.constants.*;
+import static constants.Constants.*;
 import static org.junit.Assert.assertEquals;
 import static praktikum.IngredientType.*;
 
